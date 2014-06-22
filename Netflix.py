@@ -8,15 +8,27 @@ j1 = open("cache2.json", 'r')
 movie_cache = json.loads(j1.read())
 j2 = open("cache1.json", 'r')
 user_cache = json.loads(j2.read())
+j3 = open("osl62-AnswerCache.json", 'r')
+answer_cache = json.loads(j3.read())
+
+prediction = []
 
 def sqre_diff (x, y) :
     return (x - y) ** 2
 
 
-def rmse_map_sum (actual, prediction) :
-    s = len(actual)
-    v = sum(map(sqre_diff, actual, prediction))
-    return math.sqrt(v / s)
+def rmse(a, p, input_set) :
+    v = 0
+    l = 0
+    for x in input_set:
+        s = len(input_set[x])
+        l += s
+        i = 0
+        u = movie + "-" + input_set[x]
+        while i != s :
+            v += sqre_diff(a[u], p[i])
+            i += 1
+    return math.sqrt(v / l)
 
 
 def netflix_read (r) :
@@ -74,15 +86,16 @@ def netflix_print (w, average) :
 
 def netflix_solve (r, w):
     a = netflix_read(r)
-    
     for x in a:
         netflix_eval(w, x, a[x])
+    rmse(answer_cache, prediction, a)
     
 
 def netflix_eval(w, movie, user):
     print(str(movie) + ":")
     for i in range(len(user)):
         average = (movie_cache[movie] + user_cache[user[i]])/2
-        netflix_print(w, average)
+        prediction.append(average)
+        netflix_print(w, average)   
 
 netflix_solve(sys.stdin, sys.stdout)
