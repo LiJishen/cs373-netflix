@@ -4,11 +4,11 @@ import sys
 import json
 
 
-j1 = open("cache2.json", 'r')
+j1 = open("rbrooks-movie_average_rating.json", 'r')
 movie_cache = json.loads(j1.read())
-j2 = open("cache1.json", 'r')
+j2 = open("bryan-customer_cache.json", 'r')
 user_cache = json.loads(j2.read())
-j3 = open("answer.json", 'r')
+j3 = open("osl62-AnswerCache.json", 'r')
 answer_cache = json.loads(j3.read())
 
 prediction = []
@@ -75,13 +75,14 @@ def netflix_solve (r, w):
     a = netflix_read(r)
     for x in a:
         netflix_eval(w, x, a[x])
-    print(rmse(answer_cache, prediction, a))
+    
+    print("RMSE: %.2f" % round(rmse(answer_cache, prediction, a), 2))
     
 
 def netflix_eval(w, movie, user):
     print(str(movie) + ":")
     for i in range(len(user)):
-        average = (movie_cache[movie] * .8 + user_cache[user[i]] * .2)
+        average = (movie_cache[movie]*.9 + user_cache[user[i]]*.1 )
         prediction.append(average)
         netflix_print(w, average)   
 
