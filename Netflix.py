@@ -80,15 +80,14 @@ def netflix_solve (r, w):
 
 def netflix_eval(w, movie, user):
     print(str(movie) + ":")
-    average = 0
+    pre = 0
     users = {}
     for i in range(len(user)):
         p = movie_cache[movie]
         q = user_cache[user[i]]
-        average = (q*.521 + p*.52) - .14
-        users[user[i]] = average
-        prediction[movie]  = users
-        
-        netflix_print(w, average)   
+        pre = (q*.521 + p*.52) - .14
+        users[user[i]] = pre
+        prediction[movie]  = users       
+        netflix_print(w, pre) 
+      
 
-netflix_solve(sys.stdin, sys.stdout)
