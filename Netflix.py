@@ -10,6 +10,10 @@ j2 = open("bryan-customer_cache.json", 'r')
 user_cache = json.loads(j2.read())
 j3 = open("osl62-AnswerCache.json", 'r')
 answer_cache = json.loads(j3.read())
+j4 = open("osl62-MovieCache.json", 'r')
+medium = json.loads(j4.read())
+j5 = open("eros-movie_cache.json", 'r')
+ero = json.loads(j5.read())
 
 prediction = []
 
@@ -80,10 +84,19 @@ def netflix_solve (r, w):
     
 
 def netflix_eval(w, movie, user):
-    print(str(movie) + ":")
+    #print(str(movie) + ":")
     for i in range(len(user)):
-        average = (movie_cache[movie]*.9 + user_cache[user[i]]*.1 )
-        prediction.append(average)
-        netflix_print(w, average)   
+        #average = (movie_cache[movie]*.55  + user_cache[user[i]]*.45 )
+        #average = (float(ero[movie][0])*float(ero[movie][1]) + user_cache[user[i]] * (1 - float(ero[movie][1])) + medium[movie][1]*medium[movie][2])/2.11
+        p = movie_cache[movie]
+        q = user_cache[user[i]]
+        average = (p+q)/2
+        if p > 4:           
+            p = average *.88
+        if p < 2:
+            p = average *1.12
+
+        prediction.append(round(p, 2))
+        #netflix_print(w, average)   
 
 netflix_solve(sys.stdin, sys.stdout)
