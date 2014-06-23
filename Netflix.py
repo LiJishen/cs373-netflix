@@ -75,7 +75,7 @@ def netflix_solve (r, w):
     for x in a:
         netflix_eval(w, x, a[x])
     
-    print("RMSE: %f" % rmse(answer_cache, prediction, a))
+    print("RMSE: %.4f" % rmse(answer_cache, prediction, a))
     
 
 def netflix_eval(w, movie, user):
