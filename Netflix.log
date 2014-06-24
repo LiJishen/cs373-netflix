@@ -1,0 +1,71 @@
+commit d8cef8831e3e416b8cfe638b8cc07d0b15745296
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 18:27:20 2014 -0500
+
+    RunNetflix.in and RunNetflix.out
+
+commit a4bfa6024f67790517cedf06629ad6ac1b41db98
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 18:17:34 2014 -0500
+
+    RunNetflix.py
+
+commit 77c81adce4ec405ffc263dda26986fcd873be75d
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 16:06:58 2014 -0500
+
+    RMSE round to 4 decimal place
+
+commit 7944086f4160bc1e907b7c4f655e1c000e8f6f24
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 16:03:41 2014 -0500
+
+    RMSE < 1
+
+commit a0b6704d31ec3cfb1dd8e2860c4a04db50a17249
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 12:27:59 2014 -0500
+
+    movie cache
+
+commit d3ee9e23baf54d07f04c2ba480f6610e630c305b
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 12:23:46 2014 -0500
+
+    rmse
+
+commit c1345ebc6ff3809adfc034b4672c8db5ac76f926
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Sun Jun 22 14:44:57 2014 -0500
+
+    rmse: 1.16
+
+commit 4227b1a974ffedb4cb92f6f9c50d86661ca10689
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Sat Jun 21 20:38:17 2014 -0500
+
+    use set to store user id
+
+commit ed961a9c952a709632c6b2b458a498f9e109be09
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Sat Jun 21 20:09:23 2014 -0500
+
+    compute rmse
+
+commit 1d6d540c32c3016cf15a92ca65d31bc68fc491ed
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Sat Jun 21 17:57:49 2014 -0500
+
+    basic functions is working, need to work on calculations of predictions
+
+commit 21abcb5675e1f225392b3f9423f9fd8e42a2ece4
+Author: Jishen Li <ljs765@gmail.com>
+Date:   Sat Jun 21 15:17:33 2014 -0500
+
+    first commit
+
+commit 07c6edc9ebb31afdde0c030eef72ab2f076138d9
+Author: LiJishen <jishen@utexas.edu>
+Date:   Thu Jun 19 21:04:37 2014 -0500
+
+    Initial commit

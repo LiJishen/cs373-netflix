@@ -67,27 +67,33 @@ def netflix_read (r) :
 
 
 def netflix_print (w, average) :
-    w.write(str(round(average, 1)) + "\n")
+    w.write("{0:.1f}".format(round(average,2)) + "\n")
 
 
 def netflix_solve (r, w):
     a = netflix_read(r)
+    #counter = 0
     for x in a:
         netflix_eval(w, x, a[x])
+        #counter += 1
     
     print("RMSE: %.4f" % rmse(answer_cache, prediction, a))
-    
+    #return counter == len(a)
 
 def netflix_eval(w, movie, user):
     print(str(movie) + ":")
     pre = 0
     users = {}
+    counter = 0
     for i in range(len(user)):
         p = movie_cache[movie]
         q = user_cache[user[i]]
         pre = (q*.521 + p*.52) - .14
         users[user[i]] = pre
-        prediction[movie]  = users       
-        netflix_print(w, pre) 
-      
+        prediction[movie]  = users
+        counter += 1     
+        netflix_print(w, pre)
+
+    #for test purpose
+    return counter == len(user)
 
