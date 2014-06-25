@@ -67,7 +67,7 @@ def netflix_read (r) :
 
 
 def netflix_print (w, average) :
-    w.write("{0:.1f}".format(round(average,2)) + "\n")
+    w.write("{0:.1f}".format(average) + "\n")
 
 
 def netflix_solve (r, w):
@@ -92,7 +92,7 @@ def netflix_eval(w, movie, user):
         users[user[i]] = pre
         prediction[movie]  = users
         counter += 1     
-        netflix_print(w, pre)
+        netflix_print(w, round(pre,1))
 
     #for test purpose
     return counter == len(user)
