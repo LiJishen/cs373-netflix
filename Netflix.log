@@ -1,3 +1,15 @@
+commit 65108f05826ab4d654b444e67f9eda0245c93ee6
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Wed Jun 25 12:04:01 2014 -0500
+
+    round prediction before calculate rmse
+
+commit 3e86d7821b2bc688fdf2d80b46dde374592ea8f4
+Author: binwei lin <binwei92@cs.utexas.edu>
+Date:   Mon Jun 23 19:32:44 2014 -0500
+
+    almost done
+
 commit d8cef8831e3e416b8cfe638b8cc07d0b15745296
 Author: binwei lin <binwei92@cs.utexas.edu>
 Date:   Mon Jun 23 18:27:20 2014 -0500
