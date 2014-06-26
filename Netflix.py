@@ -41,17 +41,16 @@ def netflix_read (r) :
         s = r.readline()
         if s == "":
             break
-        if s == '':
-            break
-        if s == "\n":
-            break
 
-        if ":" in s:
+        if ":" in s:            
             movie_id = s[:-2]
 
         if previous_line != "":
             movie_id = previous_line
-            user[0] = s[:-1]
+            if(s[len(s)-1] == "\n"):
+                user[0] = s[:-1]
+            else:
+                user[0] = s
             previous_line = ""
             count = 1
 
@@ -59,15 +58,14 @@ def netflix_read (r) :
             u = r.readline()
             if u == "":
                 break
-            if u == "\n":
-                break
-            if s == ' ':
-                break
 
             if ":" in u:
                 previous_line = u[:-2]
                 break
-            user[count] = u[:-1]
+            if(u[len(u)-1] == "\n"):
+                user[count] = u[:-1]
+            else:
+                user[count] = u
             count += 1
             
         input_set[movie_id] = user
