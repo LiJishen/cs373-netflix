@@ -41,6 +41,10 @@ def netflix_read (r) :
         s = r.readline()
         if s == "":
             break
+        if s == '':
+            break
+        if s == "\n":
+            break
 
         if ":" in s:
             movie_id = s[:-2]
@@ -54,6 +58,10 @@ def netflix_read (r) :
         while True:
             u = r.readline()
             if u == "":
+                break
+            if u == "\n":
+                break
+            if s == ' ':
                 break
 
             if ":" in u:
