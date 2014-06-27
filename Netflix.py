@@ -4,11 +4,11 @@ import sys
 import json
 
 
-j1 = open("rbrooks-movie_average_rating.json", 'r')
+j1 = open("/u/mukund/netflix-tests/rbrooks-movie_average_rating.json", 'r')
 movie_cache = json.loads(j1.read())
-j2 = open("bryan-customer_cache.json", 'r')
+j2 = open("/u/mukund/netflix-tests/bryan-customer_cache.json", 'r')
 user_cache = json.loads(j2.read())
-j3 = open("osl62-AnswerCache.json", 'r')
+j3 = open("/u/mukund/netflix-tests/osl62-AnswerCache.json", 'r')
 answer_cache = json.loads(j3.read())
 
 prediction = {}
